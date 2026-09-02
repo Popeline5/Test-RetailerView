@@ -5,6 +5,7 @@
 //  Created by Juan Diosdado on 2026-08-26.
 //
 
+import SwiftData
 import SwiftUI
 
 @main
@@ -13,5 +14,7 @@ struct KyfkyfJournalDemoApp: App {
         WindowGroup {
             ContentView()
         }
+//        .modelContainer(for: [Food.self, Item.self])
+        .modelContainer(SampleData.shared.modelContainer)
     }
 }
