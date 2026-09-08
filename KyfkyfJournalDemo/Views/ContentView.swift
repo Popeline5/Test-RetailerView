@@ -9,12 +9,16 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.colorScheme) private var colorScheme
+//    @Environment(\.colorScheme) private var colorScheme
     
-    @State private var searchText = ""
+//    @State private var searchText = ""
     
     var body: some View {
         TabView {
+            Tab("Food", systemImage: "fork.knife") {
+                FoodView()
+            }
+            
             Tab("Journal", systemImage: "book") {
 //                ExperienceListView()
 //                JournalView()
@@ -23,10 +27,10 @@ struct ContentView: View {
                     .background(.kyfkyfBackground)
             }
             
-            //            Tab("People", systemImage: "person.2") {
-            ////                PersonListView()
-            //                Text("PeopleView")
-            //            }
+//            Tab("People", systemImage: "person.2") {
+////                PersonListView()
+//                Text("PeopleView")
+//            }
             
             Tab("Companions", systemImage: "person.2") {
 //                CompanionListView()
@@ -42,18 +46,17 @@ struct ContentView: View {
                     .background(.kyfkyfBackground)
             }
             
-            Tab(role: .search) {
-                NavigationStack {
-//                    SearchView()
-                    Text("SearchView")
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(.kyfkyfBackground)
-                }
-            }
+//            Tab(role: .search) {
+//                NavigationStack {
+////                    SearchView()
+//                    Text("SearchView")
+//                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//                        .background(.kyfkyfBackground)
+//                }
+//            }
         }
-        .searchable(text: $searchText)
-        .tabViewSearchActivation(.searchTabSelection)
-        .tint(colorScheme == .dark ? .indigo : .caramel)
+//        .searchable(text: $searchText)
+//        .tabViewSearchActivation(.searchTabSelection)
 //        .searchToolbarBehavior(.minimize)
 //        .toolbar {
 //            ToolbarItem(placement: .bottomBar) {
@@ -67,12 +70,16 @@ struct ContentView: View {
     }
 }
 
-#Preview("Sample Data") {
+#Preview {
     ContentView()
-        .modelContainer(SampleData.shared.modelContainer)
 }
 
-#Preview("Empty Lists") {
-    ContentView()
-        .modelContainer(for: [Food.self, Item.self], inMemory: true)
-}
+//#Preview("Sample Data") {
+//    ContentView()
+//        .modelContainer(SampleData.shared.modelContainer)
+//}
+
+//#Preview("Empty Lists") {
+//    ContentView()
+//        .modelContainer(for: [Food.self, Item.self], inMemory: true)
+//}

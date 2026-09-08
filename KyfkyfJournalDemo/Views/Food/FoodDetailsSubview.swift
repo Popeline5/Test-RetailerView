@@ -1,5 +1,5 @@
 //
-//  FoodDetailsView.swift
+//  FoodDetailsSubview.swift
 //  KyfkyfJournalDemo
 //
 //  Created by Juan Diosdado on 2026-09-01.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodDetailsView: View {
+struct FoodDetailsSubview: View {
     let firstColumnWidth: CGFloat = 75
     
     var body: some View {
@@ -124,7 +124,7 @@ struct FoodDetailsView: View {
                     // More to come
                     print("Clicked Details.showMore()")
                 }
-                .foregroundStyle(.caramel)
+                .foregroundStyle(.accent)
                 .frame(maxWidth: .infinity, alignment: .center)
             }
             .background(.kyfkyfBackground)
@@ -135,5 +135,5 @@ struct FoodDetailsView: View {
 }
 
 #Preview {
-    FoodDetailsView()
+    FoodDetailsSubview()
 }

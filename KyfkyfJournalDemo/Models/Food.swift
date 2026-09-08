@@ -22,14 +22,15 @@ class Food/*: Codable, Identifiable*/ {
     
     static let sampleData: [Food] = [
         Food(name: "Blueberry"),
-        Food(name: "Coconut"),
-        Food(name: "Pork"),
+        Food(name: "Coconut Water"),
+        Food(name: "Double Espresso"),
+        Food(name: "Pork Belly"),
         Food(name: "Risotto"),
         Food(name: "Tarte Tatin")
     ]
 }
 
-enum FoodProperty: String, CaseIterable, Identifiable {
+enum FoodSubview: String, CaseIterable, Identifiable {
     case foodDetails = "Details"
     case foodComposition = "Composition"
     case foodLifecycle = "Lifecycle"

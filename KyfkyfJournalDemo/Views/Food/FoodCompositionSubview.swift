@@ -1,5 +1,5 @@
 //
-//  FoodCompositionView.swift
+//  FoodCompositionSubview.swift
 //  KyfkyfJournalDemo
 //
 //  Created by Juan Diosdado on 2026-09-01.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FoodCompositionView: View {
+struct FoodCompositionSubview: View {
     var body: some View {
         NavigationStack {
             List {
@@ -16,9 +16,9 @@ struct FoodCompositionView: View {
                         Text("Allergens")
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Button("Show more", systemImage: "info.circle") {
+                        Button("Show info", systemImage: "info.circle") {
                             // More to come
-                            print("Clicked Allergens.info()")
+                            print("Clicked Composition.allergens.info()")
                         }
                         .foregroundStyle(.secondary)
                         .labelStyle(.iconOnly)
@@ -43,9 +43,18 @@ struct FoodCompositionView: View {
                     }
                     .buttonSizing(.flexible)
                     .buttonStyle(.borderedProminent)
+//                    .buttonBorderShape(.capsule)
                     .buttonBorderShape(.roundedRectangle(radius: 8))
-                    .foregroundStyle(.allergen)
-                    .tint(Color.allergen.opacity(0.08))
+//                    .foregroundStyle(.allergen)
+//                    .tint(Color.allergen.opacity(0.08))
+//                    .foregroundStyle(.caramel)
+//                    .tint(Color.caramel.opacity(0.08))
+//                    .foregroundStyle(.cherry)
+//                    .tint(Color.cherry.opacity(0.08))
+                    .foregroundStyle(.cherryLight)
+                    .tint(Color.cherryLight.opacity(0.08))
+//                    .foregroundStyle(.secondary)
+//                    .tint(Color.secondary.opacity(0.08))
                 }
                 
                 Section {
@@ -53,9 +62,9 @@ struct FoodCompositionView: View {
                         Text("Additives")
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Button("Show more", systemImage: "info.circle") {
+                        Button("Show info", systemImage: "info.circle") {
                             // More to come
-                            print("Clicked Allergens.info()")
+                            print("Clicked Composition.additives.info()")
                         }
                         .foregroundStyle(.secondary)
                         .labelStyle(.iconOnly)
@@ -77,8 +86,16 @@ struct FoodCompositionView: View {
                     .buttonSizing(.flexible)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle(radius: 8))
-                    .foregroundStyle(.additive)
-                    .tint(Color.additive.opacity(0.08))
+//                    .foregroundStyle(.additive)
+//                    .tint(Color.additive.opacity(0.08))
+//                    .foregroundStyle(.caramel)
+//                    .tint(Color.caramel.opacity(0.08))
+//                    .foregroundStyle(.cherry)
+//                    .tint(Color.cherry.opacity(0.08))
+                    .foregroundStyle(.cherryLight)
+                    .tint(Color.cherryLight.opacity(0.08))
+//                    .foregroundStyle(.secondary)
+//                    .tint(Color.secondary.opacity(0.08))
                 }
                 
                 Section {
@@ -86,9 +103,9 @@ struct FoodCompositionView: View {
                         Text("Contaminants")
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Button("Show more", systemImage: "info.circle") {
+                        Button("Show info", systemImage: "info.circle") {
                             // More to come
-                            print("Clicked Allergens.info()")
+                            print("Clicked Composition.contaminants.info()")
                         }
                         .foregroundStyle(.secondary)
                         .labelStyle(.iconOnly)
@@ -106,8 +123,16 @@ struct FoodCompositionView: View {
                     .buttonSizing(.flexible)
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.roundedRectangle(radius: 8))
-                    .foregroundStyle(.contaminant)
-                    .tint(Color.contaminant.opacity(0.08))
+//                    .foregroundStyle(.contaminant)
+//                    .tint(Color.contaminant.opacity(0.08))
+//                    .foregroundStyle(.caramel)
+//                    .tint(Color.caramel.opacity(0.08))
+//                    .foregroundStyle(.cherry)
+//                    .tint(Color.cherry.opacity(0.08))
+                    .foregroundStyle(.cherryLight)
+                    .tint(Color.cherryLight.opacity(0.08))
+//                    .foregroundStyle(.secondary)
+//                    .tint(Color.secondary.opacity(0.08))
                 }
                 
                 Section {
@@ -154,9 +179,9 @@ struct FoodCompositionView: View {
                     
                     Button("Show more") {
                         // More to come
-                        print("Clicked Ingredients.showMore()")
+                        print("Clicked Composition.ingredients.showMore()")
                     }
-                    .foregroundStyle(.caramel)
+                    .foregroundStyle(.accent)
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
                 
@@ -239,9 +264,9 @@ struct FoodCompositionView: View {
                     
                     Button("Show more") {
                         // More to come
-                        print("Clicked Nutrition.showMore()")
+                        print("Clicked Composition.nutrition.showMore()")
                     }
-                    .foregroundStyle(.caramel)
+                    .foregroundStyle(.accent)
                     .frame(maxWidth: .infinity, alignment: .center)
                 }
             }
@@ -250,12 +275,8 @@ struct FoodCompositionView: View {
             .scrollContentBackground(.hidden)
         }
     }
-    
-    private func openAllergen() {
-        //
-    }
 }
 
 #Preview {
-    FoodCompositionView()
+    FoodCompositionSubview()
 }

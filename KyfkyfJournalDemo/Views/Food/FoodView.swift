@@ -9,33 +9,33 @@ import SwiftData
 import SwiftUI
 
 struct FoodView: View {
-    @Query(sort: \Food.name) private var foods: [Food]
-    @Environment(\.modelContext) private var context
-        
-    @State private var selectedSubview: FoodProperty = .foodDetails
-        
+//    @Query(sort: \Food.name) private var foods: [Food]
+//    @Environment(\.modelContext) private var context
+    
+    @State private var selectedSubview: FoodSubview = .foodDetails
+    
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             VStack {
                 Picker("Select property", selection: $selectedSubview) {
-                    ForEach(FoodProperty.allCases) { property in
-                        Text(property.rawValue).tag(property)
+                    ForEach(FoodSubview.allCases) { subview in
+                        Text(subview.rawValue).tag(subview)
                     }
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
                 
                 switch selectedSubview {
-                    case .foodDetails:
-                    FoodDetailsView()
-                    case .foodComposition:
-                    FoodCompositionView()
-                    case .foodLifecycle:
-                    FoodLifecycleView()
+                case .foodDetails:
+                    FoodDetailsSubview()
+                case .foodComposition:
+                    FoodCompositionSubview()
+                case .foodLifecycle:
+                    FoodLifecycleSubview()
                 }
             }
             .background(.kyfkyfBackground)
-            .navigationTitle(foods[4].name)
+            .navigationTitle(Item.sampleData[5].food.name)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Back", systemImage: "chevron.backward") {
@@ -45,27 +45,25 @@ struct FoodView: View {
                 }
                 
                 ToolbarItem {
-                    Button("Share", systemImage: "square.and.arrow.up", action: share)
+                    Button("Share", systemImage: "square.and.arrow.up", action: shareFood)
                 }
                 
                 ToolbarItem(placement: .primaryAction) {
                     Menu("Select action", systemImage: "plus") {
-                        Button("Add to journal", systemImage: "book.badge.plus", action: addFoodToJournal)
+                        Button("Add to journal", systemImage: "book", action: addFoodToJournal)
                         
-                        Button("Add to wishlist", systemImage: "rectangle.stack.badge.plus", action: addFoodToWishlist)
+                        Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
                         
-                        Divider()
-                        
-                        Button("Add to another journal", systemImage: "book.badge.plus", action: addFoodToAnotherJournal)
-                        
-                        Button("Allocate to another person", systemImage: "person", action: allocateFoodToAnotherPerson)
+//                        Divider()
+//                        
+//                        Button("Add to another journal", systemImage: "book", action: addFoodToAnotherJournal)
+//                        
+//                        Divider()
+//                        
+//                        Button("Allocate to another person", systemImage: "person", action: allocateFoodToAnotherPerson)
                     }
                 }
             }
-        } detail: {
-            Text("Select a food")
-                .navigationTitle("Food")
-                .navigationBarTitleDisplayMode(.inline)
         }
     }
     
@@ -89,16 +87,20 @@ struct FoodView: View {
         print("Clicked allocateFoodToAnotherPerson()")
     }
     
-    private func share() {
+    private func shareFood() {
         // More to come
-        print("Clicked share()")
+        print("Clicked shareFood()")
     }
 }
 
-#Preview("Sample Data") {
+#Preview {
     FoodView()
-        .modelContainer(SampleData.shared.modelContainer)
 }
+
+//#Preview("Sample Data") {
+//    FoodView()
+//        .modelContainer(SampleData.shared.modelContainer)
+//}
 
 //#Preview("Empty List") {
 //    FoodView()

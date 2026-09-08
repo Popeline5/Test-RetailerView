@@ -8,61 +8,105 @@
 import Foundation
 import SwiftData
 
+// TODO: Solve error "Class property within Persisted Struct/Enum is not supported: NSUnitMass"
+//@Model
+//class Item {
+////    var id: UUID = UUID()
+//    var food: Food
+//    var measurement: Measurement<UnitMass>
+//    
+//    init(food: Food, measurement: Measurement<UnitMass>) {
+//        self.food = food
+//        self.measurement = measurement
+//    }
+//    
+//    static let sampleData: [Item] = [
+//        Item(food: Food(name: "Blueberry"), measurement: Measurement(value: 80, unit: .grams)),
+//        Item(food: Food(name: "Coconut Water"), measurement: Measurement(value: 40, unit: .grams)),
+//        Item(food: Food(name: "Double Espresso"), measurement: Measurement(value: 50, unit: .grams)),
+//        Item(food: Food(name: "Pork Belly"), measurement: Measurement(value: 300, unit: .grams)),
+//        Item(food: Food(name: "Risotto"), measurement: Measurement(value: 250, unit: .grams)),
+//        Item(food: Food(name: "Tarte Tatin"), measurement: Measurement(value: 100, unit: .grams))
+//    ]
+//}
+
 @Model
 class Item {
 //    var id: UUID = UUID()
     var food: Food
-    var measurement: String
-//    var measurement: Measurement<UnitMass>    // (value: 10, unit: .grams)
-    var multiples: UInt
-//    var multiples: PositiveNumber
-//    var price: Price?
+    var measurementQuantity: Double
+    var measurementUnit: String
     
-//    var name: String
-    
-//    init(name: String) {
-//        self.name = name
-//    }
-    
-//    init(food: Food, measurement: Measurement<UnitMass>, multiples: UInt) {
-//        self.food = food
-//        self.measurement = measurement
-//        self.multiples = multiples
-//    }
-    
-    init(food: Food, measurement: String, multiples: UInt) {
+    init(food: Food, measurementQuantity: Double, measurementUnit: String) {
         self.food = food
-        self.measurement = measurement
-        self.multiples = multiples
+        self.measurementQuantity = measurementQuantity
+        self.measurementUnit = measurementUnit
     }
     
-//    static let sampleData = [
-//        Item(food: Food(name: "Blueberry"), measurement: Measurement<UnitMass>(value: 80, unit: .grams), multiples: 2),
-//        Item(food: Food(name: "Coconut"), measurement: Measurement<UnitMass>(value: 40, unit: .grams), multiples: 3),
-//        Item(food: Food(name: "Pork"), measurement: Measurement<UnitMass>(value: 300, unit: .grams), multiples: 2),
-//        Item(food: Food(name: "Risotto"), measurement: Measurement<UnitMass>(value: 250, unit: .grams), multiples: 1),
-//        Item(food: Food(name: "Tarte Tatin"), measurement: Measurement<UnitMass>(value: 100, unit: .grams), multiples: 2)
-//    ]
-    
     static let sampleData: [Item] = [
-        Item(food: Food(name: "Blueberry"), measurement: "80 grams", multiples: 2),
-        Item(food: Food(name: "Coconut"), measurement: "40 grams", multiples: 3),
-        Item(food: Food(name: "Pork"), measurement: "300 grams", multiples: 2),
-        Item(food: Food(name: "Risotto"), measurement: "250 grams", multiples: 1),
-        Item(food: Food(name: "Tarte Tatin"), measurement: "100 grams", multiples: 2)
+        Item(food: Food(name: "Blueberry"), measurementQuantity: 80, measurementUnit: "grams"),
+        Item(food: Food(name: "Coconut Water"), measurementQuantity: 40, measurementUnit: "grams"),
+        Item(food: Food(name: "Double Espresso"), measurementQuantity: 50, measurementUnit: "grams"),
+        Item(food: Food(name: "Pork Belly"), measurementQuantity: 300, measurementUnit: "grams"),
+        Item(food: Food(name: "Risotto"), measurementQuantity: 250, measurementUnit: "grams"),
+        Item(food: Food(name: "Tarte Tatin"), measurementQuantity: 100, measurementUnit: "grams")
     ]
 }
 
+// Could also be called AvailableItem or InventoryItem
 @Model
-class Item2 {
-    var measurement: Measurement<UnitMass>
+class CatalogItem {
+//    var id: UUID = UUID()
+    var item: Item
+    var availableQuanity: UInt
+    var price: Price
+//    var section: Catalog.Section
     
-    init(measurement: Measurement<UnitMass>) {
-        self.measurement = measurement
+    init(item: Item, availableQuanity: UInt, price: Price/*, section: Catalog.Section*/) {
+        self.item = item
+        self.availableQuanity = availableQuanity
+        self.price = price
+//        self.section = section
     }
     
+//    static let sampleData: [CatalogItem] = [
+//        CatalogItem(item: Item(food: Food(name: "Blueberry"), measurement: Measurement(value: 80, unit: .grams)), availableQuanity: 20, price: Price(value: 4, currencyCode: "EUR")),
+//        CatalogItem(item: Item(food: Food(name: "Coconut Water"), measurement: Measurement(value: 40, unit: .grams)), availableQuanity: 5, price: Price(value: 2, currencyCode: "EUR")),
+//        CatalogItem(item: Item(food: Food(name: "Double Espresso"), measurement: Measurement(value: 50, unit: .grams)), availableQuanity: 45, price: Price(value: 5, currencyCode: "EUR")),
+//        CatalogItem(item: Item(food: Food(name: "Pork Belly"), measurement: Measurement(value: 300, unit: .grams)), availableQuanity: 3, price: Price(value: 12, currencyCode: "EUR")),
+//        CatalogItem(item: Item(food: Food(name: "Risotto"), measurement: Measurement(value: 250, unit: .grams)), availableQuanity: 7, price: Price(value: 8, currencyCode: "EUR")),
+//        CatalogItem(item: Item(food: Food(name: "Tarte Tatin"), measurement: Measurement(value: 100, unit: .grams)), availableQuanity: 3, price: Price(value: 6, currencyCode: "EUR"))
+//    ]
+}
+
+@Model
+class AcquiredItem {
+//    var id: UUID = UUID()
+    var item: CatalogItem
+    var acquiredQuantity: UInt
+    var acquisitionDate: Date
+//    var acquisitionLocation: Location
+//    var paidPrice: Price
+//    var retailer: Retailer
     
-    static let sampleData: [Item2] = [
-        Item2(measurement: Measurement(value: 10, unit: .grams))
-    ]
+    init(item: CatalogItem, acquiredQuantity: UInt, acquisitionDate: Date) {
+        self.item = item
+        self.acquiredQuantity = acquiredQuantity
+        self.acquisitionDate = acquisitionDate
+    }
+}
+
+@Model
+final class Price {
+    var value: Decimal
+    var currencyCode: String
+    
+    init(value: Decimal, currencyCode: String) {
+        self.value = value
+        self.currencyCode = currencyCode
+    }
+    
+    var currency: Locale.Currency {
+        Locale.Currency(currencyCode)
+    }
 }
