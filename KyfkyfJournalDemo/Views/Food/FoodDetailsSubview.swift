@@ -124,8 +124,11 @@ struct FoodDetailsSubview: View {
                     // More to come
                     print("Clicked Details.showMore()")
                 }
-                .foregroundStyle(.accent)
-                .frame(maxWidth: .infinity, alignment: .center)
+                .buttonSizing(.flexible)
+                .buttonStyle(.glass)
+                .foregroundStyle(.caramel)
+//                .frame(maxWidth: .infinity, alignment: .center)
+//                .listRowBackground(Color.caramel.opacity(0.08))
             }
             .background(.kyfkyfBackground)
             .font(.subheadline)

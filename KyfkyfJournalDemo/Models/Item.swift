@@ -96,6 +96,7 @@ class AcquiredItem {
     }
 }
 
+// Why is it final ???
 @Model
 final class Price {
     var value: Decimal

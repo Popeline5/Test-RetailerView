@@ -13,130 +13,6 @@ struct FoodCompositionSubview: View {
             List {
                 Section {
                     HStack {
-                        Text("Allergens")
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Button("Show info", systemImage: "info.circle") {
-                            // More to come
-                            print("Clicked Composition.allergens.info()")
-                        }
-                        .foregroundStyle(.secondary)
-                        .labelStyle(.iconOnly)
-                    }
-                    
-                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                        Button("Egg") {
-                            // Action
-                        }
-                        
-                        Button("Gluten") {
-                            // Action
-                        }
-                        
-                        Button("Lactose") {
-                            // Action
-                        }
-                        
-                        Button("Nightshade") {
-                            // Action
-                        }
-                    }
-                    .buttonSizing(.flexible)
-                    .buttonStyle(.borderedProminent)
-//                    .buttonBorderShape(.capsule)
-                    .buttonBorderShape(.roundedRectangle(radius: 8))
-//                    .foregroundStyle(.allergen)
-//                    .tint(Color.allergen.opacity(0.08))
-//                    .foregroundStyle(.caramel)
-//                    .tint(Color.caramel.opacity(0.08))
-//                    .foregroundStyle(.cherry)
-//                    .tint(Color.cherry.opacity(0.08))
-                    .foregroundStyle(.cherryLight)
-                    .tint(Color.cherryLight.opacity(0.08))
-//                    .foregroundStyle(.secondary)
-//                    .tint(Color.secondary.opacity(0.08))
-                }
-                
-                Section {
-                    HStack {
-                        Text("Additives")
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Button("Show info", systemImage: "info.circle") {
-                            // More to come
-                            print("Clicked Composition.additives.info()")
-                        }
-                        .foregroundStyle(.secondary)
-                        .labelStyle(.iconOnly)
-                    }
-                    
-                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                        Button("Carob flour") {
-                            // Action
-                        }
-                        
-                        Button("Soy lecithin") {
-                            // Action
-                        }
-                        
-                        Button("E132") {
-                            // Action
-                        }
-                    }
-                    .buttonSizing(.flexible)
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.roundedRectangle(radius: 8))
-//                    .foregroundStyle(.additive)
-//                    .tint(Color.additive.opacity(0.08))
-//                    .foregroundStyle(.caramel)
-//                    .tint(Color.caramel.opacity(0.08))
-//                    .foregroundStyle(.cherry)
-//                    .tint(Color.cherry.opacity(0.08))
-                    .foregroundStyle(.cherryLight)
-                    .tint(Color.cherryLight.opacity(0.08))
-//                    .foregroundStyle(.secondary)
-//                    .tint(Color.secondary.opacity(0.08))
-                }
-                
-                Section {
-                    HStack {
-                        Text("Contaminants")
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Button("Show info", systemImage: "info.circle") {
-                            // More to come
-                            print("Clicked Composition.contaminants.info()")
-                        }
-                        .foregroundStyle(.secondary)
-                        .labelStyle(.iconOnly)
-                    }
-                    
-                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                        Button("Cadmium") {
-                            // Action
-                        }
-                        
-                        Button("PFAS") {
-                            // Action
-                        }
-                    }
-                    .buttonSizing(.flexible)
-                    .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.roundedRectangle(radius: 8))
-//                    .foregroundStyle(.contaminant)
-//                    .tint(Color.contaminant.opacity(0.08))
-//                    .foregroundStyle(.caramel)
-//                    .tint(Color.caramel.opacity(0.08))
-//                    .foregroundStyle(.cherry)
-//                    .tint(Color.cherry.opacity(0.08))
-                    .foregroundStyle(.cherryLight)
-                    .tint(Color.cherryLight.opacity(0.08))
-//                    .foregroundStyle(.secondary)
-//                    .tint(Color.secondary.opacity(0.08))
-                }
-                
-                Section {
-                    HStack {
                         Text("Ingredients")
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -181,8 +57,11 @@ struct FoodCompositionSubview: View {
                         // More to come
                         print("Clicked Composition.ingredients.showMore()")
                     }
-                    .foregroundStyle(.accent)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .buttonSizing(.flexible)
+                    .buttonStyle(.glass)
+                    .foregroundStyle(.caramel)
+//                    .frame(maxWidth: .infinity, alignment: .center)
+//                    .listRowBackground(Color.caramel.opacity(0.08))
                 }
                 
                 Section {
@@ -266,8 +145,119 @@ struct FoodCompositionSubview: View {
                         // More to come
                         print("Clicked Composition.nutrition.showMore()")
                     }
-                    .foregroundStyle(.accent)
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .buttonSizing(.flexible)
+                    .buttonStyle(.glass)
+                    .foregroundStyle(.caramel)
+//                    .frame(maxWidth: .infinity, alignment: .center)
+//                    .listRowBackground(Color.caramel.opacity(0.08))
+                }
+                
+                Section {
+                    HStack {
+                        Text("Allergens")
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Button("Show info", systemImage: "info.circle") {
+                            // More to come
+                            print("Clicked Composition.allergens.info()")
+                        }
+                        .foregroundStyle(.secondary)
+                        .labelStyle(.iconOnly)
+                    }
+                    
+                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+                        Button("Egg") {
+                            // Action
+                        }
+                        
+                        Button("Gluten") {
+                            // Action
+                        }
+                        
+                        Button("Lactose") {
+                            // Action
+                        }
+                        
+                        Button("Nightshade") {
+                            // Action
+                        }
+                    }
+                    .buttonSizing(.flexible)
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle(radius: 8))
+                    .foregroundStyle(.cherryLight)
+                    .tint(Color.cherryLight.opacity(0.08))
+//                    .foregroundStyle(.secondary)
+//                    .tint(Color.secondary.opacity(0.08))
+                }
+                
+                Section {
+                    HStack {
+                        Text("Additives")
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Button("Show info", systemImage: "info.circle") {
+                            // More to come
+                            print("Clicked Composition.additives.info()")
+                        }
+                        .foregroundStyle(.secondary)
+                        .labelStyle(.iconOnly)
+                    }
+                    
+                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+                        Button("Carob flour") {
+                            // Action
+                        }
+                        
+                        Button("Soy lecithin") {
+                            // Action
+                        }
+                        
+                        Button("E132") {
+                            // Action
+                        }
+                    }
+                    .buttonSizing(.flexible)
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle(radius: 8))
+                    .foregroundStyle(.cherryLight)
+                    .tint(Color.cherryLight.opacity(0.08))
+//                    .foregroundStyle(.secondary)
+//                    .tint(Color.secondary.opacity(0.08))
+                }
+                
+                Section {
+                    HStack {
+                        Text("Contaminants")
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        Button("Show info", systemImage: "info.circle") {
+                            // More to come
+                            print("Clicked Composition.contaminants.info()")
+                        }
+                        .foregroundStyle(.secondary)
+                        .labelStyle(.iconOnly)
+                    }
+                    
+                    LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+                        Button("Cadmium") {
+                            // Action
+                        }
+                        
+                        Button("PFAS") {
+                            // Action
+                        }
+                    }
+                    .buttonSizing(.flexible)
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.roundedRectangle(radius: 8))
+                    .foregroundStyle(.cherryLight)
+                    .tint(Color.cherryLight.opacity(0.08))
+//                    .foregroundStyle(.secondary)
+//                    .tint(Color.secondary.opacity(0.08))
                 }
             }
             .background(.kyfkyfBackground)
