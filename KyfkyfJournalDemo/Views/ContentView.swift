@@ -19,6 +19,10 @@ struct ContentView: View {
                 FoodView()
             }
             
+            Tab("Reatailer", systemImage: "storefront") {
+                RetailerView()
+            }
+            
             Tab("Journal", systemImage: "book") {
 //                ExperienceListView()
 //                JournalView()

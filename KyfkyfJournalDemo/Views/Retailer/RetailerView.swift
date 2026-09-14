@@ -149,29 +149,52 @@ struct RetailerView: View {
                             HStack {
                                 Text("Espresso Simple")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                Image(systemName: "plus")
+                                
+                                Menu("", systemImage: "plus") {
+                                    Button("Add to journal", systemImage: "book", action: addFoodToJournal)
+                                    
+                                    Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
+                                }
+                                .foregroundStyle(.black)
                             }
+                            
                             HStack {
                                 Text("Espresso Double")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                Image(systemName: "plus")
-                            }
+                                Menu("", systemImage: "plus") {
+                                    Button("Add to journal", systemImage: "book", action: addFoodToJournal)
+                                    
+                                    Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
+                                }
+                                .foregroundStyle(.black)                            }
                             
                             HStack {
                                 Text("Cold Brew")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                Image(systemName: "plus")
-                            }
+                                Menu("", systemImage: "plus") {
+                                    Button("Add to journal", systemImage: "book", action: addFoodToJournal)
+                                    
+                                    Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
+                                }
+                                .foregroundStyle(.black)                            }
                             HStack {
                                 Text("Affogato")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                Image(systemName: "plus")
-                            }
+                                Menu("", systemImage: "plus") {
+                                    Button("Add to journal", systemImage: "book", action: addFoodToJournal)
+                                    
+                                    Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
+                                }
+                                .foregroundStyle(.black)                            }
                             HStack {
                                 Text("Affogato")
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                Image(systemName: "plus")
-                            }
+                                Menu("", systemImage: "plus") {
+                                    Button("Add to journal", systemImage: "book", action: addFoodToJournal)
+                                    
+                                    Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
+                                }
+                                .foregroundStyle(.black)                            }
                         }
                     }
                     //.listStyle(.insetGrouped)
@@ -179,7 +202,6 @@ struct RetailerView: View {
                     .scrollContentBackground(.hidden)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                
                 
                 Spacer()
                 
@@ -238,6 +260,24 @@ struct RetailerView: View {
         // More to come
         print("Clicked addRetailerToWishlist()")
     }
+    
+    private func addFoodToJournal() {
+        // More to come
+        print("Clicked addFoodToJournal()")
+    }
+    
+    private func addFoodToWishlist() {
+        // More to come
+        print("Clicked addFoodToWishlist()")
+    }
+    
+    //    private func addFoodTo() {
+    //        Menu("Select action", systemImage: "plus") {
+    //            Button("Add to journal", systemImage: "book", action: addFoodToJournal)
+    //
+    //            Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
+    //        }
+    //    }
 }
 
 #Preview {
