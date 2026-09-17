@@ -19,7 +19,7 @@ struct ContentView: View {
                 FoodView()
             }
             
-            Tab("Reatailer", systemImage: "storefront") {
+            Tab("Retailer", systemImage: "storefront") {
                 RetailerView()
             }
             
