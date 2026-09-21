@@ -166,7 +166,8 @@ struct RetailerView: View {
                                     
                                     Button("Add to wishlist", systemImage: "rectangle.stack", action: addFoodToWishlist)
                                 }
-                                .foregroundStyle(.black)                            }
+                                .foregroundStyle(.black)
+                            }
                             
                             HStack {
                                 Text("Cold Brew")

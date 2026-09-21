@@ -20,7 +20,8 @@ struct ContentView: View {
             }
             
             Tab("Retailer", systemImage: "storefront") {
-                RetailerView()
+                //RetailerView()
+                RetailerView_Header()
             }
             
             Tab("Journal", systemImage: "book") {
